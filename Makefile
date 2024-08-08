@@ -1,3 +1,4 @@
+PIP=pip
 PYTHON=python3
 
 .PHONY: help
@@ -9,3 +10,10 @@ help:  ## This.
 .PHONY: test
 test:  ## Run the test suite
 	$(PYTHON) src/prospector_holds/main.py
+
+.PHONY: requirements.txt
+requirements.txt:  ## Install the python requirements
+	$(PIP) install -r '$(@)'
+
+requirements.txt.lock: requirements.txt  ## Pin the current requirements
+	$(PIP) freeze >'$(@)'
