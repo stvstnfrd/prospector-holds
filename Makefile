@@ -10,8 +10,15 @@ help:  ## This.
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: test
-test:  ## Run the test suite
+test:  ## Run the test driver
 	$(PYTHON) src/prospector_holds/main.py
+
+.PHONY: tests
+tests:  ## Run the test suite
+	$(FIND) src -name 'test_*.py' -print0 \
+	| $(XARGS) -0 --no-run-if-empty \
+		$(PYTHON) -m unittest \
+	;
 
 .PHONY: clean
 clean:  ## Clean up temporary build files
