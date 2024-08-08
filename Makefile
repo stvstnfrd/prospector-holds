@@ -16,10 +16,7 @@ test:  ## Run the test driver
 
 .PHONY: tests
 tests:  ## Run the test suite
-	$(FIND) src -name 'test_*.py' -print0 \
-	| $(XARGS) -0 --no-run-if-empty \
-		$(PYTHON) -m unittest \
-	;
+	$(PYTHON) -m unittest
 
 .PHONY: clean
 clean:  ## Clean up temporary build files
