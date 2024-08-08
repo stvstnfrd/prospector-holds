@@ -1,5 +1,7 @@
+FIND=find
 PIP=pip
 PYTHON=python3
+XARGS=xargs
 
 .PHONY: help
 help:  ## This.
@@ -10,6 +12,13 @@ help:  ## This.
 .PHONY: test
 test:  ## Run the test suite
 	$(PYTHON) src/prospector_holds/main.py
+
+.PHONY: clean
+clean:  ## Clean up temporary build files
+	$(FIND) . -type d -name '__pycache__' -print0 \
+	| $(XARGS) -0 --no-run-if-empty \
+		rm -rf \
+	;
 
 .PHONY: requirements.txt
 requirements.txt:  ## Install the python requirements
