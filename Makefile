@@ -1,4 +1,5 @@
 FIND=find
+PACKAGE=prospector-holds
 PIP=pip
 PYTHON=python3
 XARGS=xargs
@@ -11,7 +12,7 @@ help:  ## This.
 
 .PHONY: test
 test:  ## Run the test driver
-	$(PYTHON) src/prospector_holds/main.py
+	$(PACKAGE)
 
 .PHONY: tests
 tests:  ## Run the test suite
