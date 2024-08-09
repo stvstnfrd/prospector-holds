@@ -1,7 +1,7 @@
 """
 The main entrypoint for the package
 """
-from models.record import MarcRecordText
+from prospector_holds.models.record import MarcRecordText
 
 
 def main():
