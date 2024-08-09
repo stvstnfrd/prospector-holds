@@ -38,6 +38,7 @@ setup(
     },
     package_data={
         'prospector-holds': (
+            'src/prospector_holds/schema.json',
         ),
     },
     entry_points={
