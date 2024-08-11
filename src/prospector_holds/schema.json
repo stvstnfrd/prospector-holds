@@ -150,10 +150,12 @@
         },
         "10": {
           "label": "Indicator count",
+          "always": "2",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         },
         "11": {
           "label": "Subfield code count",
+          "always": "2",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         },
         "12-16": {
@@ -264,18 +266,22 @@
         },
         "20": {
           "label": "Length of the length-of-field portion",
+          "always": "4",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         },
         "21": {
           "label": "Length of the starting-character-position portion",
+          "always": "5",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         },
         "22": {
           "label": "Length of the implementation-defined portion",
+          "always": "0",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         },
         "23": {
           "label": "Undefined",
+          "always": "0",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         }
       }
