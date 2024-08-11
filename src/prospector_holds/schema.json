@@ -273,6 +273,10 @@
         "22": {
           "label": "Length of the implementation-defined portion",
           "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
+        },
+        "23": {
+          "label": "Undefined",
+          "url": "https://www.loc.gov/marc/bibliographic/bdleader.html"
         }
       }
     },

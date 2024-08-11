@@ -3,7 +3,8 @@ Text-based MARC records
 """
 from io import StringIO
 
-from .leader import parse_leader
+from .leader import Leader
+from ..settings import SCHEMA_JSON
 
 
 def parse_field(lines):
@@ -68,7 +69,7 @@ class MarcRecordText:
             if not line:
                 continue
             if not self.leader:
-                self.leader = parse_leader(line)
+                self.leader = Leader.from_string(line)
             else:
                 if line[0] == ' ':
                     lines_buffered.append(line)
