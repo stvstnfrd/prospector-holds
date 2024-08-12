@@ -41,6 +41,29 @@ class Leader:
         for key, value in kwargs.items():
             setattr(self, key, value)
 
+    def __str__(self):
+        """
+        Create a leader line string
+        """
+        parts = [
+            'LEADER ',
+        ]
+        definition = SCHEMA_JSON['fields']['LDR']
+        data = {}
+        for offset in sorted(definition['positions'].keys()):
+            offsets = offset.split('-')
+            if len(offsets) == 1:
+                offsets.append(offsets[0])
+            start, stop = map(lambda x: int(x, 10), offsets)
+            key = label_to_key(definition['positions'][offset]['label'])
+            part = getattr(self, key, '')
+            len_expected = stop - start + 1
+            while len(part) < len_expected:
+                part += ' '
+            parts.append(part)
+        string = ''.join(parts)
+        return string
+
     @classmethod
     def from_string(cls, line):
         """
