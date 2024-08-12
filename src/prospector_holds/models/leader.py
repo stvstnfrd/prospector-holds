@@ -56,7 +56,7 @@ class Leader:
         line = parts[1]
         definition = SCHEMA_JSON['fields']['LDR']
         data = {}
-        for offset, data in definition['positions'].items():
+        for offset in definition['positions'].keys():
             offsets = offset.split('-')
             if len(offsets) == 1:
                 offsets.append(offsets[0])
