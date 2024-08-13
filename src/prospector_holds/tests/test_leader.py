@@ -43,6 +43,15 @@ class TestLeader(unittest.TestCase):
             actual = getattr(leader, key)
             assert expected == actual
 
+    def test_create_from_data(self):
+        data = {
+            key: value
+            for key, value in self.INPUT_DATA
+        }
+        leader = Leader(**data)
+        line = str(leader)
+        assert line == self.INPUT_LINE
+
     def test_serialize(self):
         line_input = self.INPUT_LINE
         leader = Leader.from_string(line_input)
