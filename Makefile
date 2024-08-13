@@ -25,6 +25,10 @@ clean:  ## Clean up temporary build files
 		rm -rf \
 	;
 
+.PHONY: install
+install:  ## Install the package
+	$(PIP) install -e .
+
 .PHONY: requirements.txt
 requirements.txt:  ## Install the python requirements
 	$(PIP) install -r '$(@)'
