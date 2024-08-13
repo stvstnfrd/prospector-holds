@@ -39,6 +39,19 @@ class TestLeader(unittest.TestCase):
         assert line is not None
         leader = Leader.from_string(line)
         assert leader is not None
+        assert str(leader) == self.INPUT_LINE
+        for key, expected in self.INPUT_DATA:
+            actual = getattr(leader, key)
+            assert expected == actual
+
+    def test_create_from_data(self):
+        data = {
+            key: value
+            for key, value in self.INPUT_DATA
+        }
+        leader = Leader(**data)
+        line = str(leader)
+        assert line == self.INPUT_LINE
         for key, expected in self.INPUT_DATA:
             actual = getattr(leader, key)
             assert expected == actual
