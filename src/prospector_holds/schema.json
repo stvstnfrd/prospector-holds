@@ -306,7 +306,7 @@
       "label": "Additional Material Characteristics",
       "repeatable": true,
       "types": {
-        "All Materials": {
+        "Books": {
           "positions": {
             "00": {
               "label": "Form of material",
@@ -315,54 +315,11 @@
                 "a": {
                   "label": "Language material"
                 },
-                "c": {
-                  "label": "Notated music"
-                },
-                "d": {
-                  "label": "Manuscript notated music"
-                },
-                "e": {
-                  "label": "Cartographic material"
-                },
-                "f": {
-                  "label": "Manuscript cartographic material"
-                },
-                "g": {
-                  "label": "Projected medium"
-                },
-                "i": {
-                  "label": "Nonmusical sound recording"
-                },
-                "j": {
-                  "label": "Musical sound recording"
-                },
-                "k": {
-                  "label": "Two-dimensional nonprojectable graphic"
-                },
-                "m": {
-                  "label": "Computer file"
-                },
-                "o": {
-                  "label": "Kit"
-                },
-                "p": {
-                  "label": "Mixed materials"
-                },
-                "r": {
-                  "label": "Three-dimensional artifact or naturally occurring object"
-                },
-                "s": {
-                  "label": "Serial/Integrating resource"
-                },
                 "t": {
                   "label": "Manuscript language material"
                 }
               }
-            }
-          }
-        },
-        "Books": {
-          "positions": {
+            },
             "01-04": {
               "label": "Illustrations",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
@@ -748,6 +705,15 @@
         },
         "Continuing Resources": {
           "positions": {
+            "00": {
+              "label": "Form of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
+              "codes": {
+                "s": {
+                  "label": "Serial/Integrating resource"
+                }
+              }
+            },
             "01": {
               "label": "Frequency",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
@@ -1256,6 +1222,24 @@
         },
         "Music": {
           "positions": {
+            "00": {
+              "label": "Form of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
+              "codes": {
+                "c": {
+                  "label": "Notated music"
+                },
+                "d": {
+                  "label": "Manuscript notated music"
+                },
+                "i": {
+                  "label": "Nonmusical sound recording"
+                },
+                "j": {
+                  "label": "Musical sound recording"
+                }
+              }
+            },
             "01-02": {
               "label": "Form of composition",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
@@ -1794,6 +1778,18 @@
         },
         "Maps": {
           "positions": {
+            "00": {
+              "label": "Form of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
+              "codes": {
+                "e": {
+                  "label": "Cartographic material"
+                },
+                "f": {
+                  "label": "Manuscript cartographic material"
+                }
+              }
+            },
             "01-04": {
               "label": "Relief",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
@@ -2167,6 +2163,24 @@
         },
         "Visual Materials": {
           "positions": {
+            "00": {
+              "label": "Form of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
+              "codes": {
+                "g": {
+                  "label": "Projected medium"
+                },
+                "k": {
+                  "label": "Two-dimensional nonprojectable graphic"
+                },
+                "o": {
+                  "label": "Kit"
+                },
+                "r": {
+                  "label": "Three-dimensional artifact or naturally occurring object"
+                }
+              }
+            },
             "01-03": {
               "label": "Running time for motion pictures and videorecordings",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
@@ -2405,6 +2419,15 @@
         },
         "Computer Files": {
           "positions": {
+            "00": {
+              "label": "Form of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
+              "codes": {
+                "m": {
+                  "label": "Computer file"
+                }
+              }
+            },
             "05": {
               "label": "Target audience",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
@@ -2553,6 +2576,15 @@
         },
         "Mixed Materials": {
           "positions": {
+            "00": {
+              "label": "Form of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
+              "codes": {
+                "p": {
+                  "label": "Mixed materials"
+                }
+              }
+            },
             "06": {
               "label": "Form of item",
               "url": "https://www.loc.gov/marc/bibliographic/bd006.html",
