@@ -1,6 +1,12 @@
 """
 General purpose utilities
 """
+import re
+
+
+_REGEX_LABEL_INVALID_CHARACTERS = re.compile(r'[^_a-zA-Z0-9]')
+_REGEX_LEADING_NUMBERS = re.compile(r'^[0-9]')
+_REGEX_TRAILING_SYMBOLS = re.compile(r'_+$')
 
 def label_to_key(label):
     """
@@ -9,9 +15,9 @@ def label_to_key(label):
     Assume: label matches the following regex:
         ^[a-zA-Z][-_/ a-zA-Z0-9]*$
     """
-    key = label
-    key = ' '.join(key.split('-'))
-    key = ' '.join(key.split('/'))
-    key = '_'.join(key.split(' '))
+    key = _REGEX_LABEL_INVALID_CHARACTERS.sub('_', label)
     key = key.lower()
+    key = _REGEX_TRAILING_SYMBOLS.sub('', key)
+    if _REGEX_LEADING_NUMBERS.match(key):
+        key = '_' + key
     return key
