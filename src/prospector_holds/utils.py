@@ -12,8 +12,7 @@ def label_to_key(label):
     """
     Convert a label (of space-delimited words) into a dict key
 
-    Assume: label matches the following regex:
-        ^[a-zA-Z][-_/ a-zA-Z0-9]*$
+    The key should also be a valid python identifier.
     """
     key = _REGEX_LABEL_INVALID_CHARACTERS.sub('_', label)
     key = key.lower()
