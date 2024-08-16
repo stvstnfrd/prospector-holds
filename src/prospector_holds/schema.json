@@ -2633,19 +2633,6 @@
       "label": "Physical Description",
       "repeatable": true,
       "types": {
-        "Common": {
-          "positions": {
-            "00": {
-              "label": "Category of material",
-              "url": "https://www.loc.gov/marc/bibliographic/bd007c.html",
-              "codes": {
-                "c": {
-                  "label": "Electronic resource"
-                }
-              }
-            }
-          }
-        },
         "Map": {
           "positions": {
             "00": {
