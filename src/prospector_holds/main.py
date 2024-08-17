@@ -10,8 +10,10 @@ def main():
     """
     input_file = 'test/night-of-the-living-dead-1968.mrk'
     record = MarcRecordText.from_file(input_file)
-    print(record.leader)
-    print(record.fields)
+    print(record)
+    print(repr(record.leader))
+    for field in record.fields:
+        print(repr(field))
 
 
 if __name__ == '__main__':
