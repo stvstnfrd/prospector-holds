@@ -28,6 +28,23 @@ class Leader:
         for key, value in kwargs.items():
             setattr(self, key, value)
 
+    def __repr__(self):
+        """
+        Create a string representation of the leader
+        """
+        kwargs = ', '.join(
+            "{key}='{value}'".format(
+                key=key,
+                value=value
+            )
+            for (key, value) in self.__dict__.items()
+        )
+        string = "{cls}({kwargs})".format(
+            cls=type(self).__name__,
+            kwargs=kwargs,
+        )
+        return string
+
     def __str__(self):
         """
         Create a leader line string
