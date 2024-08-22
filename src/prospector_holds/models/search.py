@@ -14,25 +14,33 @@ class Search:
     """
 
     @classmethod
-    def query_title(cls, search_title):
+    def query_title(cls, search_title, medium=None, is_video=True):
         """
         Search the catalogue for items by title
         """
         page_number = 0
-        # TODO: Make format configurable
-        search_format = 'blu-ray'
+        page_parts = [
+            "t:({title})".format(
+                title=search_title,
+            ),
+        ]
+        if medium is not None:
+            page_parts.append(
+                "({medium})".format(
+                    medium=medium,
+                )
+            )
+        if is_video:
+            page_parts.append(
+                'f:g',
+            )
         url = "{protocol}://{domain}{path}{page}?{params}".format(
             protocol=SETTINGS['SEARCH_PROTOCOL'],
             domain=SETTINGS['SEARCH_DOMAIN'],
             path=SETTINGS['SEARCH_PATH_SEARCH'],
             page="C__S{query}__P{page_number}__0rightresult__U".format(
                 query=quote(
-                    # TODO: I think title is incorrectly escaped;
-                    #       see multi-word title terms.
-                    "t:({title}) f:g ({format})".format(
-                        title=search_title,
-                        format=search_format,
-                    )
+                    " ".join(page_parts)
                 ),
                 page_number=page_number,
             ),
