@@ -40,6 +40,22 @@ class MarcRecordText:
                 self.fields.append(field)
             lines_buffered = []
 
+    @property
+    def fields_dict(self):
+        """
+        Represent the fields tuple as a dictionary
+
+        for ease of access/indexing
+        """
+        data = {}
+        for field in self.fields:
+            key = field.tag
+            value = field
+            if key not in data:
+                data[key] = []
+            data[key].append(value)
+        return data
+
     def __str__(self):
         """
         Serialize a record as text,

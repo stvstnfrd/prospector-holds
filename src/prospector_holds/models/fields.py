@@ -25,6 +25,21 @@ class Field:
         definition = SCHEMA_JSON['fields'].get(tag)
         self.repeatable = definition['repeatable']
 
+    @property
+    def data_dict(self):
+        """
+        Represent the data tuple as a dictionary
+
+        for ease of access/indexing
+        """
+        data = {}
+        for item in self.data:
+            key, value = item
+            if key not in data:
+                data[key] = []
+            data[key].append(value)
+        return data
+
     def __str__(self):
         """
         Serialize the field as text, as it would appear in a .mrk file.
