@@ -6,12 +6,42 @@ import requests
 from urllib.parse import quote
 
 from ..settings import SETTINGS
+from .record import MarcRecordText
 
 
 class Search:
     """
     Perform a search and fetch all paginated entries
     """
+
+    @classmethod
+    def fetch_marc_record(cls, url):
+        """
+        Fetch a MARC record from a domain-less root URL
+        of a catalogue item
+        """
+        if '?' in url:
+            params_prefix = '&'
+        else:
+            params_prefix = '?'
+        params = '&'.join([
+            "{key}={value}".format(
+                key=key,
+                value=value,
+            )
+            for (key, value) in SETTINGS['SEARCH_RECORD_MARC_DATA_QUERY_STRING'].items()
+        ])
+        url = "{protocol}://{domain}/{path}{params_prefix}{params}".format(
+            protocol=SETTINGS['SEARCH_PROTOCOL'],
+            domain=SETTINGS['SEARCH_DOMAIN'],
+            path=url,
+            params_prefix=params_prefix,
+            params=params,
+        )
+        r = requests.get(url)
+        text = r.text
+        reader = MarcRecordText.from_string(text)
+        return reader
 
     @classmethod
     def query_title(cls, search_title, medium=None, is_video=True):

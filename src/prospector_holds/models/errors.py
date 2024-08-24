@@ -33,6 +33,9 @@ class MissingSettingsKeyError(KeyError):
             'SEARCH_PATH_SEARCH': '/path/to/search/',
             'SEARCH_PATH_RECORD': '/path/to/record/',
             'SEARCH_PAGINATE_ID_PREFIX': 'pagination_link_',
+            'SEARCH_RECORD_MARC_DATA_QUERY_STRING': {
+                'marc_data': 'yes',
+            },
         }
         example = str(example)
         example = '"'.join(example.split("'"))
