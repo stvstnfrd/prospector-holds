@@ -89,3 +89,12 @@ class MarcRecordText:
         with open(input_file, 'r') as stream:
             instance = cls(stream)
         return instance
+
+    @property
+    def is_video(self):
+        """
+        Determine if the record is a video-type asset
+        """
+        if self.leader.type_of_record == 'g':
+            return True
+        return False
