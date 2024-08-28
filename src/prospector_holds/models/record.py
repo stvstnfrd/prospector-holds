@@ -90,6 +90,18 @@ class MarcRecordText:
             instance = cls(stream)
         return instance
 
+    def __getitem__(self, key):
+        """
+        Access fields as if the object were a dict, keyed off the field tag
+        """
+        definition = SCHEMA_JSON['fields'][key]
+        fields = self.fields_dict.get(key) or []
+        if definition['repeatable']:
+            return fields
+        if len(fields) > 0:
+            return fields[0]
+        return None
+
     @property
     def is_video(self):
         """
